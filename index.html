@@ -138,14 +138,40 @@ em {
 .floating-icons img:hover {
   transform: scale(1.2);
 }
+.spin-hover {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.5s ease;
+}
+.spin-hover:hover {
+  transform: rotate(20deg) scale(1.2);
+}
 </style>
 </head>
 <body>
   <header>
-    <img src="profile.png" alt="Madhavi K Profile" />
-    <h1>Madhavi K</h1>
-    <p>Sr. Full Stack Java Developer</p>
-  </header>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+    <a href="https://learn.microsoft.com/en-us/certifications/azure-developer/" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="spin-hover" />
+    </a>
+    <a href="https://www.credly.com/badges/3b7d8f65-4e6e-4982-b7ed-3bd911cb0181" target="_blank">
+      <img src="profile.png" alt="Madhavi K Profile" style="width: 120px; height: 120px; border-radius: 50%; margin-bottom: 15px;" />
+    </a>
+    <a href="https://www.credly.com/badges/7bc97c1b-313e-41f0-bb0d-1d98eb781e0a" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" class="spin-hover" />
+    </a>
+    <a href="https://www.cloudskillsboost.google/public_profiles/12345678" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP" class="spin-hover" />
+    </a>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" style="width: 32px; height: 32px;" />
+    <div>
+      <img src="profile.png" alt="Madhavi K Profile" />
+      <h1>Madhavi K</h1>
+      <p>Sr. Full Stack Java Developer</p>
+    </div>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" style="width: 32px; height: 32px;" />
+  </div>
+</header>
 
   <section>
   <h2>About Me</h2>
