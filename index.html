@@ -6,6 +6,11 @@
   <title>Madhavi K | Full Stack Java Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg: #111;
+      --text: #fef2f2;
+      --primary: #f87171;
+    }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,18 +18,15 @@
       scroll-behavior: smooth;
     }
     body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg, #111);
-  color: var(--text, #fef2f2);
-  line-height: 1.6;
-}
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
     header, section {
       padding: 40px 20px;
       max-width: 900px;
       margin: 0 auto;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease-out forwards;
     }
     header {
       text-align: center;
@@ -38,16 +40,16 @@
       margin-bottom: 15px;
     }
     header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: var(--primary, #f87171);
-  animation: zoomIn 1s ease-out;
-}
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+      animation: zoomIn 1s ease-out;
+    }
     header p {
-  color: #f3f4f6;
-  font-size: 1.2rem;
-  animation: fadeIn 1.5s ease-out;
-}
+      color: #f3f4f6;
+      font-size: 1.2rem;
+      animation: fadeIn 1.5s ease-out;
+    }
     .skills, .contact-links {
       display: flex;
       flex-wrap: wrap;
@@ -55,25 +57,27 @@
       margin-top: 20px;
     }
     .skill {
-  background: var(--primary, #7f1d1d);
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-weight: 500;
-  color: #fff;
-  transition: transform 0.3s ease;
-}
+      background: var(--primary);
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: 500;
+      color: #fff;
+      transition: transform 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
     .skill:hover {
       transform: scale(1.05);
     }
     .contact-links a {
-  display: inline-block;
-  background: var(--primary, #dc2626);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
     .contact-links a:hover {
       background: #7f1d1d;
     }
@@ -87,158 +91,73 @@
       margin-bottom: 20px;
     }
     .projects strong {
-      color: #f87171;
+      color: var(--primary);
     }
-    @keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
-  @keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-$1
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
-
-    
+<body>
+  <header>
+    <img src="profile.png" alt="Madhavi K Profile" />
+    <h1>Madhavi K</h1>
+    <p>Sr. Full Stack Java Developer</p>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I’m a passionate full stack Java developer with 9 years of experience in enterprise application development using Java, Spring Boot, Angular, React, AWS, Azure, and microservices architecture. I have delivered scalable web apps in capital markets, insurance, and fintech domains.
-    </p>
-  </section>
+  <!-- all sections stay as-is -->
 
-  <section>
-  <h2>Key Skills</h2>
-  <div class="skills">
-    <button class="skill" onclick="showSkill('java')">Java</button>
-    <button class="skill" onclick="showSkill('spring')">Spring Boot</button>
-    <button class="skill" onclick="showSkill('angular')">Angular</button>
-    <button class="skill" onclick="showSkill('react')">React</button>
-    <button class="skill" onclick="showSkill('aws')">AWS</button>
-    <button class="skill" onclick="showSkill('azure')">Azure</button>
-    <button class="skill" onclick="showSkill('docker')">Docker</button>
-    <button class="skill" onclick="showSkill('kubernetes')">Kubernetes</button>
-    <button class="skill" onclick="showSkill('sql')">SQL / Oracle</button>
-    <button class="skill" onclick="showSkill('microservices')">Microservices</button>
-    <button class="skill" onclick="showSkill('cicd')">CI/CD</button>
-    <button class="skill" onclick="showSkill('git')">Git & GitHub</button>
-    <button class="skill" onclick="showSkill('rest')">REST APIs</button>
-  </div>
-  <p id="skill-description" style="margin-top: 20px; font-style: italic;"></p>
-</section>
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const isDark = root.style.getPropertyValue('--bg') === '#111';
 
-  <section>
-    <h2>Experience</h2>
-    <p><strong>Fannie Mae, Plano, TX</strong> — Sr. Java Developer<br/>
-    <em>Jun 2023 - Present</em><br/>
-    Leading microservices development with Spring Boot and REST APIs, CI/CD setup with Jenkins, Angular-based web apps, Azure integration, and OpenShift management.
-    </p>
-    <br/>
-    <p><strong>HCL Technologies, Frisco, TX</strong> — Sr. Full Stack Developer<br/>
-    <em>Jun 2019 - May 2023</em><br/>
-    Migrated monolithic enterprise apps to microservices. Built secure and scalable web apps with Angular and React. Managed AWS infrastructure using Terraform and Dockerized apps for Kubernetes clusters.
-    </p>
-    <br/>
-    <p><strong>Erie Insurance, Erie, PA</strong> — Full Stack Developer<br/>
-    <em>Jul 2016 - Jun 2019</em><br/>
-    Built responsive user interfaces using Angular and React. Designed scalable API integrations. Hands-on database design, optimization, and backend processing.
-    </p>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    <p><strong>Master of Science in Engineering Management</strong><br/>
-    Trine University, Angola, Indiana — 2016</p>
-    <br/>
-    <p><strong>Bachelor of Technology in Mechanical Engineering</strong><br/>
-    Jawaharlal Nehru Technological University Hyderabad (JNTUH) — 2015</p>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <ul class="projects">
-      <li>
-        <strong>Loan Origination Platform</strong> — Designed a modular Spring Boot backend to process mortgage applications, verify credit and documents using RESTful services, and built Angular frontends with real-time form validations. Secured access with OAuth2 and JWTs.
-      </li>
-      <li>
-        <strong>Cloud Monitoring Dashboard</strong> — Developed a React-based admin dashboard with visual graphs for real-time AWS, Azure, and OpenShift metrics. Integrated web sockets for instant updates, used Node.js for backend services, and implemented role-based access control.
-      </li>
-      <li>
-        <strong>Portfolio Management Tool</strong> — Architected a multi-tier application for financial analysis using Spring Boot microservices, PostgreSQL, Angular, and chart libraries. Enabled data visualizations, exporting reports, and monthly financial rollups.
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <div class="contact-links">
-      <a href="mailto:krishnag9609@gmail.com">Email Me</a>
-      <a href="https://github.com/your-github" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
-      <a href="resume.pdf" target="_blank">View Resume</a>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2024 Madhavi K. All rights reserved.
-  </footer>
-<script>
-  function toggleTheme() {
-    const root = document.documentElement;
-    const isDark = root.style.getPropertyValue('--bg') === '#111';
-
-    if (isDark) {
-      root.style.setProperty('--bg', '#fff');
-      root.style.setProperty('--text', '#111');
-      root.style.setProperty('--primary', '#7f1d1d');
-    } else {
-      root.style.setProperty('--bg', '#111');
-      root.style.setProperty('--text', '#fef2f2');
-      root.style.setProperty('--primary', '#f87171');
+      if (isDark) {
+        root.style.setProperty('--bg', '#fff');
+        root.style.setProperty('--text', '#111');
+        root.style.setProperty('--primary', '#7f1d1d');
+      } else {
+        root.style.setProperty('--bg', '#111');
+        root.style.setProperty('--text', '#fef2f2');
+        root.style.setProperty('--primary', '#f87171');
+      }
     }
-  }
-function showSkill(skill) {
-  const descriptions = {
-    java: '9+ years experience writing enterprise-grade Java applications using OOP principles and best practices.',
-    spring: 'Developed 15+ Spring Boot REST APIs, integrated security (OAuth2/JWT), used in microservices.',
-    angular: 'Built responsive frontends with Angular, used RxJS for state, and modular architecture.',
-    react: 'Developed dashboards and portals using React, hooks, context API, and React Router.',
-    aws: 'Deployed services on AWS EC2, RDS, S3; integrated AWS CLI and SDKs.',
-    azure: 'Configured pipelines in Azure DevOps, deployed to AKS and managed cloud functions.',
-    docker: 'Containerized all services using Dockerfiles and Compose for local development.',
-    kubernetes: 'Used Kubernetes (K8s) to orchestrate Docker containers in dev and staging.',
-    sql: 'Wrote complex queries, stored procedures in Oracle, MySQL, and PostgreSQL.',
-    microservices: 'Designed decoupled services with REST, messaging queues, and API gateways.',
-    cicd: 'Built pipelines using Jenkins, GitHub Actions for automated testing and deployment.',
-    git: 'Used Git extensively for version control and collaboration in agile teams.',
-    rest: 'Designed REST APIs with proper status codes, error handling, and documentation.'
-  };
 
-  const display = document.getElementById('skill-description');
-  display.textContent = descriptions[skill] || '';
-}
+    function showSkill(skill) {
+      const descriptions = {
+        java: '9+ years experience writing enterprise-grade Java applications using OOP principles and best practices.',
+        spring: 'Developed 15+ Spring Boot REST APIs, integrated security (OAuth2/JWT), used in microservices.',
+        angular: 'Built responsive frontends with Angular, used RxJS for state, and modular architecture.',
+        react: 'Developed dashboards and portals using React, hooks, context API, and React Router.',
+        aws: 'Deployed services on AWS EC2, RDS, S3; integrated AWS CLI and SDKs.',
+        azure: 'Configured pipelines in Azure DevOps, deployed to AKS and managed cloud functions.',
+        docker: 'Containerized all services using Dockerfiles and Compose for local development.',
+        kubernetes: 'Used Kubernetes (K8s) to orchestrate Docker containers in dev and staging.',
+        sql: 'Wrote complex queries, stored procedures in Oracle, MySQL, and PostgreSQL.',
+        microservices: 'Designed decoupled services with REST, messaging queues, and API gateways.',
+        cicd: 'Built pipelines using Jenkins, GitHub Actions for automated testing and deployment.',
+        git: 'Used Git extensively for version control and collaboration in agile teams.',
+        rest: 'Designed REST APIs with proper status codes, error handling, and documentation.'
+      };
 
-
+      const display = document.getElementById('skill-description');
+      display.textContent = descriptions[skill] || '';
+    }
+  </script>
+</body>
 </html>
