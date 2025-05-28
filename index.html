@@ -10,6 +10,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
     }
     body {
       font-family: 'Inter', sans-serif;
@@ -21,6 +22,9 @@
       padding: 40px 20px;
       max-width: 900px;
       margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
     }
     header {
       text-align: center;
@@ -48,11 +52,15 @@
       margin-top: 20px;
     }
     .skill {
-      background: #fca5a5;
+      background: #7f1d1d;
       padding: 10px 15px;
       border-radius: 5px;
       font-weight: 500;
       color: #fff;
+      transition: transform 0.3s ease;
+    }
+    .skill:hover {
+      transform: scale(1.05);
     }
     .contact-links a {
       display: inline-block;
@@ -61,6 +69,10 @@
       padding: 10px 15px;
       border-radius: 5px;
       text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .contact-links a:hover {
+      background: #b91c1c;
     }
     footer {
       text-align: center;
@@ -70,6 +82,12 @@
     }
     .projects li {
       margin-bottom: 15px;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -125,6 +143,15 @@
   </section>
 
   <section>
+    <h2>Education</h2>
+    <p><strong>Master of Science in Engineering Management</strong><br/>
+    Trine University, Angola, Indiana — 2016</p>
+    <br/>
+    <p><strong>Bachelor of Technology in Mechanical Engineering</strong><br/>
+    Jawaharlal Nehru Technological University Hyderabad (JNTUH) — 2015</p>
+  </section>
+
+  <section>
     <h2>Projects</h2>
     <ul class="projects">
       <li>
@@ -142,7 +169,7 @@
   <section>
     <h2>Contact</h2>
     <div class="contact-links">
-      <a href="mailto:Madhavim0196@gmail.com">Email Me</a>
+      <a href="mailto:krishnag9609@gmail.com">Email Me</a>
       <a href="https://github.com/your-github" target="_blank">GitHub</a>
       <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
       <a href="resume.pdf" target="_blank">View Resume</a>
