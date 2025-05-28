@@ -120,6 +120,24 @@ strong {
 em {
   color: #ff4d4f;
 }
+.floating-icons {
+  position: fixed;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+.floating-icons img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+.floating-icons img:hover {
+  transform: scale(1.2);
+}
 </style>
 </head>
 <body>
@@ -245,5 +263,10 @@ em {
       display.textContent = descriptions[skill] || '';
     }
   </script>
+<div class="floating-icons">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
+</div>
 </body>
 </html>
