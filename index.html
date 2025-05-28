@@ -120,16 +120,7 @@ strong {
 em {
   color: #ff4d4f;
 }
-.floating-icons {
-  position: fixed;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
+
 .floating-icons img {
   width: 32px;
   height: 32px;
@@ -138,11 +129,7 @@ em {
 .floating-icons img:hover {
   transform: scale(1.2);
 }
-.spin-hover {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.5s ease;
-}
+
 .spin-hover:hover {
   transform: rotate(20deg) scale(1.2);
 }
@@ -150,23 +137,10 @@ em {
 </head>
 <body>
   <header>
-  <div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
-    <a href="https://learn.microsoft.com/en-us/certifications/azure-developer/" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="spin-hover" />
-    </a>
-    <div style="text-align: center;">
-      <img src="profile.png" alt="Madhavi K Profile" style="width: 120px; height: 120px; border-radius: 50%; margin-bottom: 15px;" />
-      <h1>Madhavi K</h1>
-      <p>Sr. Full Stack Java Developer</p>
-    </div>
-    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-      <a href="https://www.credly.com/badges/7bc97c1b-313e-41f0-bb0d-1d98eb781e0a" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" class="spin-hover" />
-      </a>
-      <a href="https://www.cloudskillsboost.google/public_profiles/12345678" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP" class="spin-hover" />
-      </a>
-    </div>
+  <div style="text-align: center;">
+    <img src="profile.png" alt="Madhavi K Profile" style="width: 120px; height: 120px; border-radius: 50%; margin-bottom: 15px;" />
+    <h1>Madhavi K</h1>
+    <p>Sr. Full Stack Java Developer</p>
   </div>
 </header>
 
@@ -286,10 +260,6 @@ em {
       display.textContent = descriptions[skill] || '';
     }
   </script>
-<div class="floating-icons">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
-</div>
+
 </body>
 </html>
