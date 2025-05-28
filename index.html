@@ -6,6 +6,11 @@
   <title>Madhavi K | Full Stack Java Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg: #111;
+      --text: #fef2f2;
+      --primary: #f87171;
+    }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,23 +18,21 @@
       scroll-behavior: smooth;
     }
     body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg, #111);
-  color: var(--text, #fef2f2);
-  line-height: 1.6;
-}
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
     header, section {
       padding: 40px 20px;
       max-width: 900px;
       margin: 0 auto;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease-out forwards;
     }
     header {
       text-align: center;
       background: #1a1a1a;
       box-shadow: 0 4px 10px rgba(255,255,255,0.05);
+      padding-bottom: 30px;
     }
     header img {
       width: 120px;
@@ -38,16 +41,16 @@
       margin-bottom: 15px;
     }
     header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: var(--primary, #f87171);
-  animation: zoomIn 1s ease-out;
-}
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+      animation: zoomIn 1s ease-out;
+    }
     header p {
-  color: #f3f4f6;
-  font-size: 1.2rem;
-  animation: fadeIn 1.5s ease-out;
-}
+      color: #f3f4f6;
+      font-size: 1.2rem;
+      animation: fadeIn 1.5s ease-out;
+    }
     .skills, .contact-links {
       display: flex;
       flex-wrap: wrap;
@@ -55,25 +58,25 @@
       margin-top: 20px;
     }
     .skill {
-  background: var(--primary, #7f1d1d);
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-weight: 500;
-  color: #fff;
-  transition: transform 0.3s ease;
-}
+      background: var(--primary);
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: 500;
+      color: #fff;
+      transition: transform 0.3s ease;
+    }
     .skill:hover {
       transform: scale(1.05);
     }
     .contact-links a {
-  display: inline-block;
-  background: var(--primary, #dc2626);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
     .contact-links a:hover {
       background: #7f1d1d;
     }
@@ -87,40 +90,44 @@
       margin-bottom: 20px;
     }
     .projects strong {
-      color: #f87171;
+      color: var(--primary);
     }
-    @keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    button.theme-toggle {
+      margin-top: 20px;
+      padding: 8px 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
-  @keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-$1
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
-$1<header>
-    $2
-  </header>
+<body>
+  <header>
+    <img src="profile.png" alt="Madhavi K Profile" />
+    <h1>Madhavi K</h1>
+    <p>Sr. Full Stack Java Developer</p>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   </header>
 
   <section>
@@ -204,21 +211,22 @@ $1<header>
   <footer>
     &copy; 2024 Madhavi K. All rights reserved.
   </footer>
-<script>
-  function toggleTheme() {
-    const root = document.documentElement;
-    const isDark = root.style.getPropertyValue('--bg') === '#111';
 
-    if (isDark) {
-      root.style.setProperty('--bg', '#fff');
-      root.style.setProperty('--text', '#111');
-      root.style.setProperty('--primary', '#7f1d1d');
-    } else {
-      root.style.setProperty('--bg', '#111');
-      root.style.setProperty('--text', '#fef2f2');
-      root.style.setProperty('--primary', '#f87171');
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const isDark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#111';
+
+      if (isDark) {
+        root.style.setProperty('--bg', '#fff');
+        root.style.setProperty('--text', '#111');
+        root.style.setProperty('--primary', '#7f1d1d');
+      } else {
+        root.style.setProperty('--bg', '#111');
+        root.style.setProperty('--text', '#fef2f2');
+        root.style.setProperty('--primary', '#f87171');
+      }
     }
-  }
-</script>
+  </script>
 </body>
 </html>
