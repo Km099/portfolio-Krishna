@@ -6,11 +6,6 @@
   <title>Madhavi K | Full Stack Java Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #111;
-      --text: #fef2f2;
-      --primary: #f87171;
-    }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -18,21 +13,23 @@
       scroll-behavior: smooth;
     }
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+  font-family: 'Inter', sans-serif;
+  background: var(--bg, #111);
+  color: var(--text, #fef2f2);
+  line-height: 1.6;
+}
     header, section {
       padding: 40px 20px;
       max-width: 900px;
       margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
     }
     header {
       text-align: center;
       background: #1a1a1a;
       box-shadow: 0 4px 10px rgba(255,255,255,0.05);
-      padding-bottom: 30px;
     }
     header img {
       width: 120px;
@@ -41,16 +38,16 @@
       margin-bottom: 15px;
     }
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: var(--primary);
-      animation: zoomIn 1s ease-out;
-    }
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--primary, #f87171);
+  animation: zoomIn 1s ease-out;
+}
     header p {
-      color: #f3f4f6;
-      font-size: 1.2rem;
-      animation: fadeIn 1.5s ease-out;
-    }
+  color: #f3f4f6;
+  font-size: 1.2rem;
+  animation: fadeIn 1.5s ease-out;
+}
     .skills, .contact-links {
       display: flex;
       flex-wrap: wrap;
@@ -58,25 +55,25 @@
       margin-top: 20px;
     }
     .skill {
-      background: var(--primary);
-      padding: 10px 15px;
-      border-radius: 5px;
-      font-weight: 500;
-      color: #fff;
-      transition: transform 0.3s ease;
-    }
+  background: var(--primary, #7f1d1d);
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
     .skill:hover {
       transform: scale(1.05);
     }
     .contact-links a {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 10px 15px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
+  display: inline-block;
+  background: var(--primary, #dc2626);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
     .contact-links a:hover {
       background: #7f1d1d;
     }
@@ -90,44 +87,40 @@
       margin-bottom: 20px;
     }
     .projects strong {
-      color: var(--primary);
+      color: #f87171;
     }
-    button.theme-toggle {
-      margin-top: 20px;
-      padding: 8px 16px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    @keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
     }
+  @keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-    @keyframes zoomIn {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+$1
 </head>
-<body>
-  <header>
-    <img src="profile.png" alt="Madhavi K Profile" />
-    <h1>Madhavi K</h1>
-    <p>Sr. Full Stack Java Developer</p>
-    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+$1<header>
+    $2
+  </header>
   </header>
 
   <section>
@@ -138,23 +131,24 @@
   </section>
 
   <section>
-    <h2>Key Skills</h2>
-    <div class="skills">
-      <div class="skill">Java</div>
-      <div class="skill">Spring Boot</div>
-      <div class="skill">Angular</div>
-      <div class="skill">React</div>
-      <div class="skill">AWS</div>
-      <div class="skill">Azure</div>
-      <div class="skill">Docker</div>
-      <div class="skill">Kubernetes</div>
-      <div class="skill">SQL / Oracle</div>
-      <div class="skill">Microservices</div>
-      <div class="skill">CI/CD</div>
-      <div class="skill">Git & GitHub</div>
-      <div class="skill">REST APIs</div>
-    </div>
-  </section>
+  <h2>Key Skills</h2>
+  <div class="skills">
+    <button class="skill" onclick="showSkill('java')">Java</button>
+    <button class="skill" onclick="showSkill('spring')">Spring Boot</button>
+    <button class="skill" onclick="showSkill('angular')">Angular</button>
+    <button class="skill" onclick="showSkill('react')">React</button>
+    <button class="skill" onclick="showSkill('aws')">AWS</button>
+    <button class="skill" onclick="showSkill('azure')">Azure</button>
+    <button class="skill" onclick="showSkill('docker')">Docker</button>
+    <button class="skill" onclick="showSkill('kubernetes')">Kubernetes</button>
+    <button class="skill" onclick="showSkill('sql')">SQL / Oracle</button>
+    <button class="skill" onclick="showSkill('microservices')">Microservices</button>
+    <button class="skill" onclick="showSkill('cicd')">CI/CD</button>
+    <button class="skill" onclick="showSkill('git')">Git & GitHub</button>
+    <button class="skill" onclick="showSkill('rest')">REST APIs</button>
+  </div>
+  <p id="skill-description" style="margin-top: 20px; font-style: italic;"></p>
+</section>
 
   <section>
     <h2>Experience</h2>
@@ -211,22 +205,42 @@
   <footer>
     &copy; 2024 Madhavi K. All rights reserved.
   </footer>
+<script>
+  function toggleTheme() {
+    const root = document.documentElement;
+    const isDark = root.style.getPropertyValue('--bg') === '#111';
 
-  <script>
-    function toggleTheme() {
-      const root = document.documentElement;
-      const isDark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#111';
-
-      if (isDark) {
-        root.style.setProperty('--bg', '#fff');
-        root.style.setProperty('--text', '#111');
-        root.style.setProperty('--primary', '#7f1d1d');
-      } else {
-        root.style.setProperty('--bg', '#111');
-        root.style.setProperty('--text', '#fef2f2');
-        root.style.setProperty('--primary', '#f87171');
-      }
+    if (isDark) {
+      root.style.setProperty('--bg', '#fff');
+      root.style.setProperty('--text', '#111');
+      root.style.setProperty('--primary', '#7f1d1d');
+    } else {
+      root.style.setProperty('--bg', '#111');
+      root.style.setProperty('--text', '#fef2f2');
+      root.style.setProperty('--primary', '#f87171');
     }
-  </script>
+  }
+function showSkill(skill) {
+  const descriptions = {
+    java: '9+ years experience writing enterprise-grade Java applications using OOP principles and best practices.',
+    spring: 'Developed 15+ Spring Boot REST APIs, integrated security (OAuth2/JWT), used in microservices.',
+    angular: 'Built responsive frontends with Angular, used RxJS for state, and modular architecture.',
+    react: 'Developed dashboards and portals using React, hooks, context API, and React Router.',
+    aws: 'Deployed services on AWS EC2, RDS, S3; integrated AWS CLI and SDKs.',
+    azure: 'Configured pipelines in Azure DevOps, deployed to AKS and managed cloud functions.',
+    docker: 'Containerized all services using Dockerfiles and Compose for local development.',
+    kubernetes: 'Used Kubernetes (K8s) to orchestrate Docker containers in dev and staging.',
+    sql: 'Wrote complex queries, stored procedures in Oracle, MySQL, and PostgreSQL.',
+    microservices: 'Designed decoupled services with REST, messaging queues, and API gateways.',
+    cicd: 'Built pipelines using Jenkins, GitHub Actions for automated testing and deployment.',
+    git: 'Used Git extensively for version control and collaboration in agile teams.',
+    rest: 'Designed REST APIs with proper status codes, error handling, and documentation.'
+  };
+
+  const display = document.getElementById('skill-description');
+  display.textContent = descriptions[skill] || '';
+}
+
+$1
 </body>
 </html>
