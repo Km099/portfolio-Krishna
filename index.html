@@ -14,8 +14,8 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      background: #111;
+      color: #fef2f2;
       line-height: 1.6;
     }
     header, section {
@@ -28,8 +28,8 @@
     }
     header {
       text-align: center;
-      background: #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      background: #1a1a1a;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.05);
     }
     header img {
       width: 120px;
@@ -40,9 +40,10 @@
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
+      color: #f87171;
     }
     header p {
-      color: #666;
+      color: #f3f4f6;
       font-size: 1.2rem;
     }
     .skills, .contact-links {
@@ -72,16 +73,19 @@
       transition: background 0.3s ease;
     }
     .contact-links a:hover {
-      background: #b91c1c;
+      background: #7f1d1d;
     }
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      color: #777;
+      color: #f3f4f6;
     }
     .projects li {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .projects strong {
+      color: #f87171;
     }
     @keyframes fadeInUp {
       to {
@@ -128,17 +132,17 @@
     <h2>Experience</h2>
     <p><strong>Fannie Mae, Plano, TX</strong> — Sr. Java Developer<br/>
     <em>Jun 2023 - Present</em><br/>
-    Worked on microservices architecture, Spring Boot APIs, and integrated CI/CD pipelines using Jenkins and GitHub. Developed Angular frontends, deployed on Azure, and maintained OpenShift environments.
+    Leading microservices development with Spring Boot and REST APIs, CI/CD setup with Jenkins, Angular-based web apps, Azure integration, and OpenShift management.
     </p>
     <br/>
     <p><strong>HCL Technologies, Frisco, TX</strong> — Sr. Full Stack Developer<br/>
     <em>Jun 2019 - May 2023</em><br/>
-    Migrated monolithic applications to microservices using Spring Boot. Built Angular and React frontends and deployed AWS cloud-native apps. Worked extensively with Docker, Kubernetes, and Terraform.
+    Migrated monolithic enterprise apps to microservices. Built secure and scalable web apps with Angular and React. Managed AWS infrastructure using Terraform and Dockerized apps for Kubernetes clusters.
     </p>
     <br/>
     <p><strong>Erie Insurance, Erie, PA</strong> — Full Stack Developer<br/>
     <em>Jul 2016 - Jun 2019</em><br/>
-    Developed SPAs using Angular 6 and React. Designed scalable APIs, worked on PostgreSQL and MongoDB, and optimized application performance and deployment.
+    Built responsive user interfaces using Angular and React. Designed scalable API integrations. Hands-on database design, optimization, and backend processing.
     </p>
   </section>
 
@@ -155,13 +159,13 @@
     <h2>Projects</h2>
     <ul class="projects">
       <li>
-        <strong>Loan Origination Platform</strong> — A scalable application to handle mortgage loan processing built using Spring Boot microservices, Angular, AWS RDS, and integrated with 3rd-party APIs for credit and document verification.
+        <strong>Loan Origination Platform</strong> — Designed a modular Spring Boot backend to process mortgage applications, verify credit and documents using RESTful services, and built Angular frontends with real-time form validations. Secured access with OAuth2 and JWTs.
       </li>
       <li>
-        <strong>Cloud Monitoring Dashboard</strong> — Built with React and Node.js, this dashboard provides real-time insights from AWS CloudWatch, OpenShift, and Azure Monitor using REST APIs and web sockets.
+        <strong>Cloud Monitoring Dashboard</strong> — Developed a React-based admin dashboard with visual graphs for real-time AWS, Azure, and OpenShift metrics. Integrated web sockets for instant updates, used Node.js for backend services, and implemented role-based access control.
       </li>
       <li>
-        <strong>Portfolio Management Tool</strong> — Designed for investment analysts to manage capital allocations, using Spring Boot back end, PostgreSQL, and a responsive Angular front end.
+        <strong>Portfolio Management Tool</strong> — Architected a multi-tier application for financial analysis using Spring Boot microservices, PostgreSQL, Angular, and chart libraries. Enabled data visualizations, exporting reports, and monthly financial rollups.
       </li>
     </ul>
   </section>
