@@ -1,171 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="author" content="Madhavi K">
+  <meta name="keywords" content="Java, Spring Boot, Angular, AWS, Azure, Full-stack Developer, Portfolio">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Madhavi K - Full-Stack Java Developer specializing in enterprise applications using Spring Boot, Angular, and cloud platforms.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.github.io/your-portfolio/">
+  <meta property="og:title" content="Madhavi K - Full-Stack Java Developer">
+  <meta property="og:description" content="Experienced Java Developer with expertise in building scalable web applications using modern technologies.">
+  <meta property="og:image" content="https://your-domain.github.io/your-portfolio/preview.png">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://your-domain.github.io/your-portfolio/">
+  <meta property="twitter:title" content="Madhavi K - Full-Stack Java Developer">
+  <meta property="twitter:description" content="Experienced in Java, Spring Boot, Angular, and AWS/Azure cloud platforms">
+  <meta property="twitter:image" content="https://your-domain.github.io/your-portfolio/preview.png">
+  <link rel="canonical" href="https://your-domain.github.io/your-portfolio/">
+  <meta name="theme-color" content="#64ffda">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Madhavi K | Full Stack Java Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #111;
-      --text: #fef2f2;
-      --primary: #ff4d4f;
+      --background: #0a192f;
+      --primary: #64ffda;
+      --text: #ccd6f6;
+      --subtext: #8892b0;
     }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
+      box-sizing: border-box;
     }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
+
+    html, body {
+      background-color: var(--background);
       color: var(--text);
+      font-family: 'Inter', sans-serif;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      padding: 2rem 4rem;
+      gap: 2rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      border: 1px solid var(--primary);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--primary);
+      color: #0a192f;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6rem 4rem;
+    }
+
+    .intro {
+      max-width: 600px;
+    }
+
+    .intro h3 {
+      color: var(--primary);
+      font-family: 'Fira Code', monospace;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro h1 {
+      font-size: 3rem;
+      color: var(--text);
+    }
+
+    .intro h2 {
+      font-size: 2.5rem;
+      color: var(--subtext);
+      margin: 1rem 0;
+    }
+
+    .intro p {
+      font-size: 1rem;
+      color: var(--subtext);
       line-height: 1.6;
     }
-    header, section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    header {
-      text-align: center;
-      background: #1a1a1a;
-      box-shadow: 0 4px 10px rgba(255,255,255,0.05);
-    }
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: var(--primary);
-      animation: zoomIn 1s ease-out;
-    }
-    header p {
-      color: #f3f4f6;
-      font-size: 1.2rem;
-      animation: fadeIn 1.5s ease-out;
-    }
-    h2 {
+
+    .intro .highlight {
       color: var(--primary);
     }
-    strong {
+
+    .email-vertical {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      writing-mode: vertical-rl;
       color: var(--primary);
-    }
-    em {
-      color: var(--primary);
-    }
-    .skills, .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .skill {
-      background: var(--primary);
-      padding: 10px 15px;
-      border-radius: 5px;
-      font-weight: 500;
-      color: #fff;
-      transition: transform 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-    .skill:hover {
-      transform: scale(1.05);
-    }
-    .contact-links a {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 10px 15px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .contact-links a:hover {
-      background: #7f1d1d;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #f3f4f6;
-    }
-    .projects li {
-      margin-bottom: 20px;
-    }
-    .projects strong {
-      color: var(--primary);
-    }
-    @keyframes zoomIn {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      font-family: 'Fira Code', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
     }
   </style>
+
 </head>
 <body>
-  <header>
-    <div style="text-align: center;">
-      <img src="profile.png" alt="Madhavi K Profile" />
+  <nav>
+    <a href="#about">01. About</a>
+    <a href="#work">02. Work</a>
+    <a href="#contact">03. Contact</a>
+    <a href="resume.pdf" target="_blank">Resume</a>
+  </nav>
+
+  <div class="container">
+    <div class="intro">
+      <h3>Hi, my name is</h3>
       <h1>Madhavi K</h1>
-      <p>Sr. Full Stack Java Developer</p>
+      <h2>I build things for the web.</h2>
+      <p>
+        I'm a full stack Java developer with <span class="highlight">9 years</span> of experience designing enterprise applications in <span class="highlight">Java</span>, <span class="highlight">Spring Boot</span>, and <span class="highlight">Angular</span>. I have delivered scalable solutions in <span class="highlight">capital markets</span>, <span class="highlight">insurance</span>, and <span class="highlight">banking</span> domains, leveraging tools like <span class="highlight">Kotlin</span>, <span class="highlight">Docker</span>, <span class="highlight">Jenkins</span>, and cloud platforms such as <span class="highlight">Azure</span> and <span class="highlight">AWS</span>.
+      </p>
     </div>
-  </header>
+  </div>
 
-  <section>
-    <h2>About Me</h2>
-    <div id="about-carousel">
-      <p class="about-slide">A Full Stack Java Developer with around 9 years of experience in designing, developing, and maintaining enterprise-grade web applications. I specialize in Java, Spring Boot, and Angular, and I’ve worked extensively on building scalable microservices, integrating RESTful APIs, and delivering full-stack solutions in both cloud and on-premise environments.</p>
-      <p class="about-slide" style="display:none;">I’ve worked in diverse domains like capital markets, insurance, and banking—developing secure and performance-driven applications. My recent role at Fannie Mae involved migrating legacy apps to cloud-native solutions using Kotlin, Angular 12, and Azure CI/CD pipelines. I also leveraged tools like Jenkins, Gradle, Docker, and OpenShift for automated builds and deployments.</p>
-      <p class="about-slide" style="display:none;">Previously at HCL, I led the development of microservices using Spring Boot and implemented robust front-ends using Angular and React. I also have hands-on experience with AWS and Azure cloud services, container orchestration with Kubernetes, and CI/CD practices.</p>
-      <p class="about-slide" style="display:none;">I enjoy contributing to the entire software lifecycle—from UI/UX to backend integration and deployment—and I’m passionate about staying updated with modern tech trends and optimizing system performance. I’m now looking for a challenging opportunity where I can leverage my end-to-end development expertise and continue to grow in cloud-native and scalable architecture.</p>
-      <button onclick="nextSlide()" style="margin-top: 20px; padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer;">Next</button>
-    </div>
-  </section>
+  <div class="email-vertical">krishnag9609@gmail.com</div>
+<section id="about" style="padding: 6rem 4rem;">
+  <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;">About</h2>
+  <p style="max-width: 700px; color: var(--subtext); line-height: 1.6;">
+    With 9 years of experience in full stack Java development, I specialize in Java, Spring Boot, and Angular. I've worked across domains like capital markets, insurance, and banking—delivering scalable cloud-native applications using Azure, AWS, Docker, Jenkins, and Kubernetes.
+  </p>
+</section>
 
-  <!-- Keep your Skills, Experience, Education, Projects, Contact, Footer here -->
+<section id="work" style="padding: 6rem 4rem;">
+  <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;">Work</h2>
+  <ul style="color: var(--subtext); line-height: 1.8;">
+    <li><strong style="color: var(--primary);">Fannie Mae:</strong> Migrated legacy apps using Kotlin, Angular 12, Azure pipelines, and OpenShift.</li>
+    <li><strong style="color: var(--primary);">HCL Technologies:</strong> Led Spring Boot microservices development and Angular/React front ends.</li>
+    <li><strong style="color: var(--primary);">Erie Insurance:</strong> Developed full stack solutions and contributed to CI/CD and cloud adoption.</li>
+  </ul>
+</section>
 
-  <script>
-    function toggleTheme() {
-      const root = document.documentElement;
-      const isDark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#111';
-      if (isDark) {
-        root.style.setProperty('--bg', '#fff');
-        root.style.setProperty('--text', '#111');
-        root.style.setProperty('--primary', '#7f1d1d');
-      } else {
-        root.style.setProperty('--bg', '#111');
-        root.style.setProperty('--text', '#fef2f2');
-        root.style.setProperty('--primary', '#ff4d4f');
-      }
-    }
+<section id="contact" style="padding: 6rem 4rem; text-align: center;">
+  <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;">Contact</h2>
+  <p style="color: var(--subtext);">I'm currently open to opportunities and collaborations. Feel free to reach out!</p>
+  <a href="mailto:krishnag9609@gmail.com" style="display: inline-block; margin-top: 1.5rem; color: var(--primary); border: 1px solid var(--primary); padding: 0.75rem 1.25rem; border-radius: 4px; text-decoration: none; font-family: 'Fira Code', monospace;">Say Hello</a>
+</section>
 
-    function nextSlide() {
-      const slides = document.querySelectorAll('.about-slide');
-      let current = Array.from(slides).findIndex(s => s.style.display !== 'none');
-      slides[current].style.display = 'none';
-      const next = (current + 1) % slides.length;
-      slides[next].style.display = 'block';
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Madhavi K",
+      "url": "https://your-domain.github.io/your-portfolio/",
+      "jobTitle": "Full Stack Java Developer",
+      "knowsAbout": ["Java", "Spring Boot", "Angular", "AWS", "Azure", "Docker", "Kubernetes"],
+      "description": "Experienced developer building scalable web applications in enterprise environments."
     }
   </script>
+
 </body>
 </html>
