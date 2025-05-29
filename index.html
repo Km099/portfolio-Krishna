@@ -146,9 +146,13 @@ em {
 
   <section>
   <h2>About Me</h2>
-  <p>
-    I’m a passionate full stack Java developer with 9 years of experience in enterprise application development using Java, Spring Boot, Angular, React, AWS, Azure, and microservices architecture. I have delivered scalable web apps in capital markets, insurance, and fintech domains.
-  </p>
+  <div id="about-carousel">
+    <p class="about-slide">A Full Stack Java Developer with around 9 years of experience in designing, developing, and maintaining enterprise-grade web applications. I specialize in Java, Spring Boot, and Angular, and I’ve worked extensively on building scalable microservices, integrating RESTful APIs, and delivering full-stack solutions in both cloud and on-premise environments.</p>
+    <p class="about-slide" style="display:none;">I’ve worked in diverse domains like capital markets, insurance, and banking—developing secure and performance-driven applications. My recent role at Fannie Mae involved migrating legacy apps to cloud-native solutions using Kotlin, Angular 12, and Azure CI/CD pipelines. I also leveraged tools like Jenkins, Gradle, Docker, and OpenShift for automated builds and deployments.</p>
+    <p class="about-slide" style="display:none;">Previously at HCL, I led the development of microservices using Spring Boot and implemented robust front-ends using Angular and React. I also have hands-on experience with AWS and Azure cloud services, container orchestration with Kubernetes, and CI/CD practices.</p>
+    <p class="about-slide" style="display:none;">I enjoy contributing to the entire software lifecycle—from UI/UX to backend integration and deployment—and I’m passionate about staying updated with modern tech trends and optimizing system performance. I’m now looking for a challenging opportunity where I can leverage my end-to-end development expertise and continue to grow in cloud-native and scalable architecture.</p>
+    <button onclick="nextSlide()" style="margin-top: 20px; padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer;">Next</button>
+  </div>
 </section>
 
 <section>
@@ -259,7 +263,14 @@ em {
       const display = document.getElementById('skill-description');
       display.textContent = descriptions[skill] || '';
     }
-  </script>
+  function nextSlide() {
+  const slides = document.querySelectorAll('.about-slide');
+  let current = Array.from(slides).findIndex(s => s.style.display !== 'none');
+  slides[current].style.display = 'none';
+  const next = (current + 1) % slides.length;
+  slides[next].style.display = 'block';
+}
+</script>
 
 </body>
 </html>
