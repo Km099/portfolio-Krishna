@@ -7,100 +7,119 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #1e3a8a; /* Deep blue body background */
-      --text: #0f172a;
-      --primary: #dbeafe; /* Very light blue */
-      --primary-hover: #bfdbfe;
+      --bg: #f9fafb; /* light background */
+      --text: #1e293b; /* dark slate */
+      --primary: #1e3a8a; /* dark blue */
+      --primary-hover: #3b82f6;
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
+
     header, section {
       padding: 40px 20px;
       max-width: 900px;
       margin: 0 auto;
     }
+
     header {
       text-align: center;
       background: var(--primary);
+      color: white;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     header img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       margin-bottom: 15px;
     }
+
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
-      color: #1e3a8a;
+      color: white;
       animation: zoomIn 1s ease-out;
     }
+
     header p {
-      color: #1e293b;
+      color: #e0e7ff;
       font-size: 1.2rem;
       animation: fadeIn 1.5s ease-out;
     }
+
     .skills, .contact-links {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
       margin-top: 20px;
     }
+
     .skill {
       background: var(--primary);
+      color: white;
       padding: 10px 15px;
       border-radius: 5px;
       font-weight: 500;
-      color: #1e3a8a;
       transition: transform 0.3s ease, background 0.3s ease;
       border: none;
       cursor: pointer;
     }
+
     .skill:hover {
       transform: scale(1.05);
       background: var(--primary-hover);
     }
+
     .contact-links a {
       display: inline-block;
       background: var(--primary);
-      color: #1e3a8a;
+      color: white;
       padding: 10px 15px;
       border-radius: 5px;
       text-decoration: none;
       transition: background 0.3s ease;
     }
+
     .contact-links a:hover {
       background: var(--primary-hover);
     }
+
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      color: #f3f4f6;
+      color: var(--text);
     }
+
     .projects li {
       margin-bottom: 20px;
     }
+
     .projects strong {
       color: var(--primary);
     }
+
     h2 {
       color: var(--primary);
     }
+
     strong, em {
       color: var(--primary);
     }
+
     @keyframes zoomIn {
       from {
         opacity: 0;
@@ -111,6 +130,7 @@
         transform: scale(1);
       }
     }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -131,7 +151,7 @@
   <section>
     <h2>About Me</h2>
     <div id="about-carousel">
-      <p class="about-slide">A Full Stack Java Developer with around 9 years of experience...</p>
+      <p class="about-slide">A Full Stack Java Developer with around 9 years of experience in designing, developing, and maintaining enterprise-grade web applications...</p>
       <p class="about-slide" style="display:none;">I’ve worked in diverse domains like capital markets, insurance, and banking...</p>
       <p class="about-slide" style="display:none;">Previously at HCL, I led the development of microservices using Spring Boot...</p>
       <p class="about-slide" style="display:none;">I enjoy contributing to the entire software lifecycle...</p>
