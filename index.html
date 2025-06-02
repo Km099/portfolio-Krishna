@@ -7,9 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #111;
+      --bg: #1e3a8a; /* Deep Blue */
       --text: #fef2f2;
-      --primary: #f87171;
+      --primary: #3b82f6; /* Bright Blue */
     }
     * {
       box-sizing: border-box;
@@ -30,8 +30,8 @@
     }
     header {
       text-align: center;
-      background: #1a1a1a;
-      box-shadow: 0 4px 10px rgba(255,255,255,0.05);
+      background: #1a237e;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     header img {
       width: 120px;
@@ -57,15 +57,15 @@
       margin-top: 20px;
     }
     .skill {
-  background: #ff4d4f;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-weight: 500;
-  color: #fff;
-  transition: transform 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
+      background: var(--primary);
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: 500;
+      color: #fff;
+      transition: transform 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
     .skill:hover {
       transform: scale(1.05);
     }
@@ -79,7 +79,7 @@
       transition: background 0.3s ease;
     }
     .contact-links a:hover {
-      background: #7f1d1d;
+      background: #1e40af;
     }
     footer {
       text-align: center;
@@ -111,135 +111,117 @@
         opacity: 1;
       }
     }
-  h2 {
-  color: #ff4d4f;
-}
-strong {
-  color: #ff4d4f;
-}
-em {
-  color: #ff4d4f;
-}
-
-.floating-icons img {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.3s ease;
-}
-.floating-icons img:hover {
-  transform: scale(1.2);
-}
-
-.spin-hover:hover {
-  transform: rotate(20deg) scale(1.2);
-}
-</style>
+    h2 {
+      color: var(--primary);
+    }
+    strong, em {
+      color: var(--primary);
+    }
+    .floating-icons img {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease;
+    }
+    .floating-icons img:hover {
+      transform: scale(1.2);
+    }
+    .spin-hover:hover {
+      transform: rotate(20deg) scale(1.2);
+    }
+  </style>
 </head>
 <body>
   <header>
-  <div style="text-align: center;">
-    <img src="profile.png" alt="Madhavi K Profile" style="width: 120px; height: 120px; border-radius: 50%; margin-bottom: 15px;" />
-    <h1>Madhavi K</h1>
-    <p>Sr. Full Stack Java Developer</p>
-  </div>
-</header>
+    <div style="text-align: center;">
+      <img src="profile.png" alt="Madhavi K Profile" />
+      <h1>Madhavi K</h1>
+      <p>Sr. Full Stack Java Developer</p>
+    </div>
+  </header>
 
   <section>
-  <h2>About Me</h2>
-  <div id="about-carousel">
-    <p class="about-slide">A Full Stack Java Developer with around 9 years of experience in designing, developing, and maintaining enterprise-grade web applications. I specialize in Java, Spring Boot, and Angular, and I’ve worked extensively on building scalable microservices, integrating RESTful APIs, and delivering full-stack solutions in both cloud and on-premise environments.</p>
-    <p class="about-slide" style="display:none;">I’ve worked in diverse domains like capital markets, insurance, and banking—developing secure and performance-driven applications. My recent role at Fannie Mae involved migrating legacy apps to cloud-native solutions using Kotlin, Angular 12, and Azure CI/CD pipelines. I also leveraged tools like Jenkins, Gradle, Docker, and OpenShift for automated builds and deployments.</p>
-    <p class="about-slide" style="display:none;">Previously at HCL, I led the development of microservices using Spring Boot and implemented robust front-ends using Angular and React. I also have hands-on experience with AWS and Azure cloud services, container orchestration with Kubernetes, and CI/CD practices.</p>
-    <p class="about-slide" style="display:none;">I enjoy contributing to the entire software lifecycle—from UI/UX to backend integration and deployment—and I’m passionate about staying updated with modern tech trends and optimizing system performance. I’m now looking for a challenging opportunity where I can leverage my end-to-end development expertise and continue to grow in cloud-native and scalable architecture.</p>
-    <button onclick="nextSlide()" style="margin-top: 20px; padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer;">Next</button>
-  </div>
-</section>
+    <h2>About Me</h2>
+    <div id="about-carousel">
+      <p class="about-slide">A Full Stack Java Developer with around 9 years of experience in designing, developing, and maintaining enterprise-grade web applications...</p>
+      <p class="about-slide" style="display:none;">I’ve worked in diverse domains like capital markets, insurance, and banking...</p>
+      <p class="about-slide" style="display:none;">Previously at HCL, I led the development of microservices using Spring Boot...</p>
+      <p class="about-slide" style="display:none;">I enjoy contributing to the entire software lifecycle...</p>
+      <button onclick="nextSlide()" style="margin-top: 20px; padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer;">Next</button>
+    </div>
+  </section>
 
-<section>
-  <h2>Key Skills</h2>
-  <div class="skills">
-    <button class="skill" onclick="showSkill('java')">Java</button>
-    <button class="skill" onclick="showSkill('spring')">Spring Boot</button>
-    <button class="skill" onclick="showSkill('angular')">Angular</button>
-    <button class="skill" onclick="showSkill('react')">React</button>
-    <button class="skill" onclick="showSkill('aws')">AWS</button>
-    <button class="skill" onclick="showSkill('azure')">Azure</button>
-    <button class="skill" onclick="showSkill('docker')">Docker</button>
-    <button class="skill" onclick="showSkill('kubernetes')">Kubernetes</button>
-    <button class="skill" onclick="showSkill('sql')">SQL / Oracle</button>
-    <button class="skill" onclick="showSkill('microservices')">Microservices</button>
-    <button class="skill" onclick="showSkill('cicd')">CI/CD</button>
-    <button class="skill" onclick="showSkill('git')">Git & GitHub</button>
-    <button class="skill" onclick="showSkill('rest')">REST APIs</button>
-  </div>
-  <p id="skill-description" style="margin-top: 20px; font-style: italic;"></p>
-</section>
+  <section>
+    <h2>Key Skills</h2>
+    <div class="skills">
+      <button class="skill" onclick="showSkill('java')">Java</button>
+      <button class="skill" onclick="showSkill('spring')">Spring Boot</button>
+      <button class="skill" onclick="showSkill('angular')">Angular</button>
+      <button class="skill" onclick="showSkill('react')">React</button>
+      <button class="skill" onclick="showSkill('aws')">AWS</button>
+      <button class="skill" onclick="showSkill('azure')">Azure</button>
+      <button class="skill" onclick="showSkill('docker')">Docker</button>
+      <button class="skill" onclick="showSkill('kubernetes')">Kubernetes</button>
+      <button class="skill" onclick="showSkill('sql')">SQL / Oracle</button>
+      <button class="skill" onclick="showSkill('microservices')">Microservices</button>
+      <button class="skill" onclick="showSkill('cicd')">CI/CD</button>
+      <button class="skill" onclick="showSkill('git')">Git & GitHub</button>
+      <button class="skill" onclick="showSkill('rest')">REST APIs</button>
+    </div>
+    <p id="skill-description" style="margin-top: 20px; font-style: italic;"></p>
+  </section>
 
-<section>
-  <h2>Experience</h2>
-  <p><strong>Fannie Mae, Plano, TX</strong> — Sr. Java Developer<br/>
-  <em>Jun 2023 - Present</em><br/>
-  Leading microservices development with Spring Boot and REST APIs, CI/CD setup with Jenkins, Angular-based web apps, Azure integration, and OpenShift management.
-  </p>
-  <br/>
-  <p><strong>HCL Technologies, Frisco, TX</strong> — Sr. Full Stack Developer<br/>
-  <em>Jun 2019 - May 2023</em><br/>
-  Migrated monolithic enterprise apps to microservices. Built secure and scalable web apps with Angular and React. Managed AWS infrastructure using Terraform and Dockerized apps for Kubernetes clusters.
-  </p>
-  <br/>
-  <p><strong>Erie Insurance, Erie, PA</strong> — Full Stack Developer<br/>
-  <em>Jul 2016 - Jun 2019</em><br/>
-  Built responsive user interfaces using Angular and React. Designed scalable API integrations. Hands-on database design, optimization, and backend processing.
-  </p>
-</section>
+  <section>
+    <h2>Experience</h2>
+    <p><strong>Fannie Mae, Plano, TX</strong> — Sr. Java Developer<br/>
+    <em>Jun 2023 - Present</em><br/>
+    Leading microservices development with Spring Boot and REST APIs...</p><br/>
+    <p><strong>HCL Technologies, Frisco, TX</strong> — Sr. Full Stack Developer<br/>
+    <em>Jun 2019 - May 2023</em><br/>
+    Migrated monolithic enterprise apps to microservices...</p><br/>
+    <p><strong>Erie Insurance, Erie, PA</strong> — Full Stack Developer<br/>
+    <em>Jul 2016 - Jun 2019</em><br/>
+    Built responsive user interfaces using Angular and React...</p>
+  </section>
 
-<section>
-  <h2>Education</h2>
-  <p><strong>Master of Science in Engineering Management</strong><br/>
-  Trine University, Angola, Indiana — 2016</p>
-  <br/>
-  <p><strong>Bachelor of Technology in Mechanical Engineering</strong><br/>
-  Jawaharlal Nehru Technological University Hyderabad (JNTUH) — 2015</p>
-</section>
+  <section>
+    <h2>Education</h2>
+    <p><strong>Master of Science in Engineering Management</strong><br/>
+    Trine University, Angola, Indiana — 2016</p><br/>
+    <p><strong>Bachelor of Technology in Mechanical Engineering</strong><br/>
+    JNTUH — 2015</p>
+  </section>
 
-<section>
-  <h2>Projects</h2>
-  <ul class="projects">
-    <li>
-      <strong>Loan Origination Platform</strong> — Designed a modular Spring Boot backend to process mortgage applications, verify credit and documents using RESTful services, and built Angular frontends with real-time form validations. Secured access with OAuth2 and JWTs.
-    </li>
-    <li>
-      <strong>Cloud Monitoring Dashboard</strong> — Developed a React-based admin dashboard with visual graphs for real-time AWS, Azure, and OpenShift metrics. Integrated web sockets for instant updates, used Node.js for backend services, and implemented role-based access control.
-    </li>
-    <li>
-      <strong>Portfolio Management Tool</strong> — Architected a multi-tier application for financial analysis using Spring Boot microservices, PostgreSQL, Angular, and chart libraries. Enabled data visualizations, exporting reports, and monthly financial rollups.
-    </li>
-  </ul>
-</section>
+  <section>
+    <h2>Projects</h2>
+    <ul class="projects">
+      <li><strong>Loan Origination Platform</strong> — Designed a modular Spring Boot backend to process mortgage applications...</li>
+      <li><strong>Cloud Monitoring Dashboard</strong> — Developed a React-based admin dashboard with visual graphs...</li>
+      <li><strong>Portfolio Management Tool</strong> — Architected a multi-tier application for financial analysis...</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>Contact</h2>
-  <div class="contact-links">
-    <a href="mailto:krishnag9609@gmail.com">Email Me</a>
-    <a href="https://github.com/your-github" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
-    <a href="resume.pdf" target="_blank">View Resume</a>
-  </div>
-</section>
+  <section>
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <a href="mailto:krishnag9609@gmail.com">Email Me</a>
+      <a href="https://github.com/your-github" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+      <a href="resume.pdf" target="_blank">View Resume</a>
+    </div>
+  </section>
 
   <script>
     function toggleTheme() {
       const root = document.documentElement;
-      const isDark = root.style.getPropertyValue('--bg') === '#111';
-
+      const isDark = root.style.getPropertyValue('--bg') === '#1e3a8a';
       if (isDark) {
         root.style.setProperty('--bg', '#fff');
         root.style.setProperty('--text', '#111');
-        root.style.setProperty('--primary', '#7f1d1d');
+        root.style.setProperty('--primary', '#1e3a8a');
       } else {
-        root.style.setProperty('--bg', '#111');
+        root.style.setProperty('--bg', '#1e3a8a');
         root.style.setProperty('--text', '#fef2f2');
-        root.style.setProperty('--primary', '#f87171');
+        root.style.setProperty('--primary', '#3b82f6');
       }
     }
 
@@ -259,18 +241,16 @@ em {
         git: 'Used Git extensively for version control and collaboration in agile teams.',
         rest: 'Designed REST APIs with proper status codes, error handling, and documentation.'
       };
-
-      const display = document.getElementById('skill-description');
-      display.textContent = descriptions[skill] || '';
+      document.getElementById('skill-description').textContent = descriptions[skill] || '';
     }
-  function nextSlide() {
-  const slides = document.querySelectorAll('.about-slide');
-  let current = Array.from(slides).findIndex(s => s.style.display !== 'none');
-  slides[current].style.display = 'none';
-  const next = (current + 1) % slides.length;
-  slides[next].style.display = 'block';
-}
-</script>
 
+    function nextSlide() {
+      const slides = document.querySelectorAll('.about-slide');
+      let current = Array.from(slides).findIndex(s => s.style.display !== 'none');
+      slides[current].style.display = 'none';
+      const next = (current + 1) % slides.length;
+      slides[next].style.display = 'block';
+    }
+  </script>
 </body>
 </html>
