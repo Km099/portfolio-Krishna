@@ -7,9 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #1e3a8a; /* Deep Blue */
-      --text: #fef2f2;
-      --primary: #3b82f6; /* Bright Blue */
+      --bg: #1e3a8a; /* Deep blue body background */
+      --text: #0f172a;
+      --primary: #dbeafe; /* Very light blue */
+      --primary-hover: #bfdbfe;
     }
     * {
       box-sizing: border-box;
@@ -30,8 +31,8 @@
     }
     header {
       text-align: center;
-      background: #1a237e;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      background: var(--primary);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     header img {
       width: 120px;
@@ -42,11 +43,11 @@
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
-      color: var(--primary);
+      color: #1e3a8a;
       animation: zoomIn 1s ease-out;
     }
     header p {
-      color: #f3f4f6;
+      color: #1e293b;
       font-size: 1.2rem;
       animation: fadeIn 1.5s ease-out;
     }
@@ -61,25 +62,26 @@
       padding: 10px 15px;
       border-radius: 5px;
       font-weight: 500;
-      color: #fff;
-      transition: transform 0.3s ease;
+      color: #1e3a8a;
+      transition: transform 0.3s ease, background 0.3s ease;
       border: none;
       cursor: pointer;
     }
     .skill:hover {
       transform: scale(1.05);
+      background: var(--primary-hover);
     }
     .contact-links a {
       display: inline-block;
       background: var(--primary);
-      color: white;
+      color: #1e3a8a;
       padding: 10px 15px;
       border-radius: 5px;
       text-decoration: none;
       transition: background 0.3s ease;
     }
     .contact-links a:hover {
-      background: #1e40af;
+      background: var(--primary-hover);
     }
     footer {
       text-align: center;
@@ -91,6 +93,12 @@
       margin-bottom: 20px;
     }
     .projects strong {
+      color: var(--primary);
+    }
+    h2 {
+      color: var(--primary);
+    }
+    strong, em {
       color: var(--primary);
     }
     @keyframes zoomIn {
@@ -111,42 +119,23 @@
         opacity: 1;
       }
     }
-    h2 {
-      color: var(--primary);
-    }
-    strong, em {
-      color: var(--primary);
-    }
-    .floating-icons img {
-      width: 32px;
-      height: 32px;
-      transition: transform 0.3s ease;
-    }
-    .floating-icons img:hover {
-      transform: scale(1.2);
-    }
-    .spin-hover:hover {
-      transform: rotate(20deg) scale(1.2);
-    }
   </style>
 </head>
 <body>
   <header>
-    <div style="text-align: center;">
-      <img src="profile.png" alt="Madhavi K Profile" />
-      <h1>Madhavi K</h1>
-      <p>Sr. Full Stack Java Developer</p>
-    </div>
+    <img src="profile.png" alt="Madhavi K Profile" />
+    <h1>Madhavi K</h1>
+    <p>Sr. Full Stack Java Developer</p>
   </header>
 
   <section>
     <h2>About Me</h2>
     <div id="about-carousel">
-      <p class="about-slide">A Full Stack Java Developer with around 9 years of experience in designing, developing, and maintaining enterprise-grade web applications...</p>
+      <p class="about-slide">A Full Stack Java Developer with around 9 years of experience...</p>
       <p class="about-slide" style="display:none;">I’ve worked in diverse domains like capital markets, insurance, and banking...</p>
       <p class="about-slide" style="display:none;">Previously at HCL, I led the development of microservices using Spring Boot...</p>
       <p class="about-slide" style="display:none;">I enjoy contributing to the entire software lifecycle...</p>
-      <button onclick="nextSlide()" style="margin-top: 20px; padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer;">Next</button>
+      <button onclick="nextSlide()" class="skill">Next</button>
     </div>
   </section>
 
@@ -172,31 +161,23 @@
 
   <section>
     <h2>Experience</h2>
-    <p><strong>Fannie Mae, Plano, TX</strong> — Sr. Java Developer<br/>
-    <em>Jun 2023 - Present</em><br/>
-    Leading microservices development with Spring Boot and REST APIs...</p><br/>
-    <p><strong>HCL Technologies, Frisco, TX</strong> — Sr. Full Stack Developer<br/>
-    <em>Jun 2019 - May 2023</em><br/>
-    Migrated monolithic enterprise apps to microservices...</p><br/>
-    <p><strong>Erie Insurance, Erie, PA</strong> — Full Stack Developer<br/>
-    <em>Jul 2016 - Jun 2019</em><br/>
-    Built responsive user interfaces using Angular and React...</p>
+    <p><strong>Fannie Mae</strong> — Sr. Java Developer<br/><em>Jun 2023 - Present</em></p>
+    <p><strong>HCL Technologies</strong> — Sr. Full Stack Developer<br/><em>Jun 2019 - May 2023</em></p>
+    <p><strong>Erie Insurance</strong> — Full Stack Developer<br/><em>Jul 2016 - Jun 2019</em></p>
   </section>
 
   <section>
     <h2>Education</h2>
-    <p><strong>Master of Science in Engineering Management</strong><br/>
-    Trine University, Angola, Indiana — 2016</p><br/>
-    <p><strong>Bachelor of Technology in Mechanical Engineering</strong><br/>
-    JNTUH — 2015</p>
+    <p><strong>MS in Engineering Management</strong><br/>Trine University, Indiana — 2016</p>
+    <p><strong>BTech in Mechanical Engineering</strong><br/>JNTUH — 2015</p>
   </section>
 
   <section>
     <h2>Projects</h2>
     <ul class="projects">
-      <li><strong>Loan Origination Platform</strong> — Designed a modular Spring Boot backend to process mortgage applications...</li>
-      <li><strong>Cloud Monitoring Dashboard</strong> — Developed a React-based admin dashboard with visual graphs...</li>
-      <li><strong>Portfolio Management Tool</strong> — Architected a multi-tier application for financial analysis...</li>
+      <li><strong>Loan Origination Platform</strong> — Backend in Spring Boot and frontend in Angular.</li>
+      <li><strong>Cloud Monitoring Dashboard</strong> — Real-time monitoring using React and web sockets.</li>
+      <li><strong>Portfolio Management Tool</strong> — Financial tool built with Angular, Spring Boot, and PostgreSQL.</li>
     </ul>
   </section>
 
@@ -211,35 +192,21 @@
   </section>
 
   <script>
-    function toggleTheme() {
-      const root = document.documentElement;
-      const isDark = root.style.getPropertyValue('--bg') === '#1e3a8a';
-      if (isDark) {
-        root.style.setProperty('--bg', '#fff');
-        root.style.setProperty('--text', '#111');
-        root.style.setProperty('--primary', '#1e3a8a');
-      } else {
-        root.style.setProperty('--bg', '#1e3a8a');
-        root.style.setProperty('--text', '#fef2f2');
-        root.style.setProperty('--primary', '#3b82f6');
-      }
-    }
-
     function showSkill(skill) {
       const descriptions = {
-        java: '9+ years experience writing enterprise-grade Java applications using OOP principles and best practices.',
-        spring: 'Developed 15+ Spring Boot REST APIs, integrated security (OAuth2/JWT), used in microservices.',
-        angular: 'Built responsive frontends with Angular, used RxJS for state, and modular architecture.',
-        react: 'Developed dashboards and portals using React, hooks, context API, and React Router.',
-        aws: 'Deployed services on AWS EC2, RDS, S3; integrated AWS CLI and SDKs.',
-        azure: 'Configured pipelines in Azure DevOps, deployed to AKS and managed cloud functions.',
-        docker: 'Containerized all services using Dockerfiles and Compose for local development.',
-        kubernetes: 'Used Kubernetes (K8s) to orchestrate Docker containers in dev and staging.',
-        sql: 'Wrote complex queries, stored procedures in Oracle, MySQL, and PostgreSQL.',
-        microservices: 'Designed decoupled services with REST, messaging queues, and API gateways.',
-        cicd: 'Built pipelines using Jenkins, GitHub Actions for automated testing and deployment.',
-        git: 'Used Git extensively for version control and collaboration in agile teams.',
-        rest: 'Designed REST APIs with proper status codes, error handling, and documentation.'
+        java: '9+ years experience writing enterprise-grade Java applications.',
+        spring: 'Built scalable Spring Boot microservices with security layers.',
+        angular: 'Dynamic SPAs using Angular and RxJS.',
+        react: 'Built dashboards using React, hooks, and state management.',
+        aws: 'EC2, RDS, S3 integration and deployment.',
+        azure: 'Azure DevOps pipelines and AKS deployments.',
+        docker: 'Containerized services using Docker and Docker Compose.',
+        kubernetes: 'Managed services on Kubernetes (K8s).',
+        sql: 'Advanced queries and optimization in Oracle, PostgreSQL.',
+        microservices: 'Decoupled services architecture using REST.',
+        cicd: 'CI/CD pipelines with Jenkins and GitHub Actions.',
+        git: 'Collaborative code with Git and GitHub.',
+        rest: 'Built REST APIs with proper versioning and error handling.'
       };
       document.getElementById('skill-description').textContent = descriptions[skill] || '';
     }
